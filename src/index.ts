@@ -37,7 +37,8 @@ async function main(): Promise<void> {
       if (entries.length === 0) {
         console.log('No memories found.');
       } else {
-        entries.forEach(e => console.log(formatMemory(e)));
+        // Show newest entries first so the most recent context is at the top
+        entries.reverse().forEach(e => console.log(formatMemory(e)));
       }
       break;
     }
