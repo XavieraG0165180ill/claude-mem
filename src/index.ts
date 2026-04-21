@@ -39,6 +39,7 @@ async function main(): Promise<void> {
       } else {
         // Show newest entries first so the most recent context is at the top
         entries.reverse().forEach(e => console.log(formatMemory(e)));
+        console.log(`\n(${entries.length} memor${entries.length === 1 ? 'y' : 'ies'} total)`);
       }
       break;
     }
@@ -53,6 +54,7 @@ async function main(): Promise<void> {
         console.log('No matching memories found.');
       } else {
         results.forEach(e => console.log(formatMemory(e)));
+        console.log(`\n(${results.length} result${results.length === 1 ? '' : 's'})`);
       }
       break;
     }
