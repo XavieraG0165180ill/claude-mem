@@ -39,7 +39,9 @@ async function main(): Promise<void> {
       } else {
         // Show newest entries first so the most recent context is at the top
         entries.reverse().forEach(e => console.log(formatMemory(e)));
-        console.log(`\n(${entries.length} memor${entries.length === 1 ? 'y' : 'ies'} total)`);
+        // Use 'memory' / 'memories' for cleaner pluralization
+        const label = entries.length === 1 ? 'memory' : 'memories';
+        console.log(`\n(${entries.length} ${label} total)`);
       }
       break;
     }
